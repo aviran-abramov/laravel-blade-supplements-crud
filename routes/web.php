@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\SupplementController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('supplements.index');
-});
+Route::get('/', [SupplementController::class, 'index'])->name('supplements.index');
