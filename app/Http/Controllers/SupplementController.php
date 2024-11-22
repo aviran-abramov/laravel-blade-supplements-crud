@@ -13,4 +13,9 @@ class SupplementController extends Controller
             "supplements" => Supplement::all()
         ]);
     }
+
+    public function create()
+    {
+        return view('supplements.create');
+    }
 }
