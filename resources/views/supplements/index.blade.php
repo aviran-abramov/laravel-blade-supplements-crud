@@ -9,8 +9,17 @@
                         <p class="mt-0.5 text-gray-600 text-sm">{{ $supplement->description }}</p>
                     </div>
 
-                    {{-- Buttons --}}
-                    <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', ['id' => $supplement->id]) }}">Edit</a>
+                    {{-- Buttons/Actions --}}
+                    <div class="flex items-center gap-2 mt-2">
+                        <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', ['id' => $supplement->id]) }}">Edit</a>
+
+                        <form action="{{ route('supplement.destroy', ['id' => $supplement->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="text-center border border-black bg-red-400 hover:text-white p-2 rounded">Delete</button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
         </div>

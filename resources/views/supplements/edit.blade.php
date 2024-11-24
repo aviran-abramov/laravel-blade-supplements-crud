@@ -20,10 +20,17 @@
                 @enderror
             </div>
 
-            <div>
+            {{-- Buttons --}}
+            <div class="flex items-center gap-2">
                 <button class="border border-black bg-gray-300 hover:text-white p-2 rounded" type="submit">Create</button>
-            </div>
 
+                <button form="delete-form" class="border border-black bg-red-300 hover:text-white p-2 rounded" type="submit">Delete</button>
+            </div>
+        </form>
+
+        <form id="delete-form" method="POST" action="{{ route('supplement.destroy', ['id' => $supplement->id]) }}" class="hidden">
+            @csrf
+            @method('DELETE')
         </form>
     </section>
 </x-layout>
