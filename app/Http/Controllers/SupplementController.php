@@ -37,4 +37,33 @@ class SupplementController extends Controller
         // Redirect to index
         return redirect()->route('supplements.index');
     }
+
+    public function edit(int $id)
+    {
+        // Find supplement
+        $supplement = Supplement::findOrFail($id);
+
+        return view('supplements.edit', [
+            'supplement' => $supplement
+        ]);
+    }
+
+    public function update(Request $request, int $id)
+    {
+        // Validate Data
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:3',
+            'description' => 'required|string'
+        ]);
+
+        // Capitalize first character
+        $validatedData['name'] = Str::ucfirst($validatedData['name']);
+
+        $supplement = Supplement::find($id);
+
+        $supplement->update($validatedData);
+
+        return redirect()->route('supplements.index');
+
+    }
 }
