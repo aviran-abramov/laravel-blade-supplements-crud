@@ -64,6 +64,12 @@ class SupplementController extends Controller
         $supplement->update($validatedData);
 
         return redirect()->route('supplements.index');
+    }
 
+    public function destroy(int $id)
+    {
+        Supplement::findOrFail($id)->delete();
+
+        return redirect()->route('supplements.index');
     }
 }

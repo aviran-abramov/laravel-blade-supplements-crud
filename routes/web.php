@@ -10,3 +10,5 @@ Route::post('/', [SupplementController::class, 'store'])->name('supplements.stor
 
 Route::get('/{id}/edit', [SupplementController::class, 'edit'])->name('supplements.edit');
 Route::patch('/{id}', [SupplementController::class, 'update'])->name('supplement->update');
+
+Route::delete('/{id}', [SupplementController::class, 'destroy'])->name('supplement.destroy');
