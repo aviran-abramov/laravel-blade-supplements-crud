@@ -15,7 +15,7 @@
 
                         <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', $supplement) }}">Edit</a>
 
-                        <form action="{{ route('supplement.destroy', $supplement) }}" method="POST">
+                        <form action="{{ route('supplements.destroy', $supplement) }}" method="POST">
                             @csrf
                             @method('DELETE')
 

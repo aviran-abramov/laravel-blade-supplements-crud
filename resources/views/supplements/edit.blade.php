@@ -28,7 +28,7 @@
             </div>
         </form>
 
-        <form id="delete-form" method="POST" action="{{ route('supplement.destroy', $supplement) }}" class="hidden">
+        <form id="delete-form" method="POST" action="{{ route('supplements.destroy', $supplement) }}" class="hidden">
             @csrf
             @method('DELETE')
         </form>

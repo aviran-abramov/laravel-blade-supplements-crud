@@ -14,7 +14,7 @@ Route::prefix('supplements')->group(function () {
     Route::get('/{supplement}/edit', [SupplementController::class, 'edit'])->name('supplements.edit');
     Route::patch('/{supplement}', [SupplementController::class, 'update'])->name('supplements.update');
 
-    Route::delete("/{supplement}", [SupplementController::class, 'destroy'])->name('supplement.destroy');
+    Route::delete("/{supplement}", [SupplementController::class, 'destroy'])->name('supplements.destroy');
 });
 
 
