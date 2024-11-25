@@ -11,7 +11,7 @@
             <div class="flex items-center gap-2">
                 <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', $supplement) }}">Edit</a>
 
-                <form id="delete-form" method="POST" action="{{ route('supplement.destroy', $supplement) }}">
+                <form id="delete-form" method="POST" action="{{ route('supplements.destroy', $supplement) }}">
                     @csrf
                     @method('DELETE')
 
