@@ -22,7 +22,7 @@
 
             {{-- Buttons --}}
             <div class="flex items-center gap-2">
-                <button class="border border-black bg-gray-300 hover:text-white p-2 rounded" type="submit">Create</button>
+                <button class="border border-black bg-gray-300 hover:text-white p-2 rounded" type="submit">Update</button>
 
                 <button form="delete-form" class="border border-black bg-red-300 hover:text-white p-2 rounded" type="submit">Delete</button>
             </div>
