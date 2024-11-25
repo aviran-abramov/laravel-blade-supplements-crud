@@ -1,4 +1,4 @@
-<x-layout metaTitle="Index" title="Edit Supplement: {{ $supplement->name }}">
+<x-layout metaTitle="Edit Supplement" title="Edit Supplement: {{ $supplement->name }}">
     <section class="w-[480px]">
         <form action="{{ route('supplement->update', ['id' => $supplement->id]) }}" method="POST" class="border border-black flex flex-col gap-4 p-4 rounded">
             @csrf
