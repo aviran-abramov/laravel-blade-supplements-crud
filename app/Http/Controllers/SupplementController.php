@@ -18,10 +18,10 @@ class SupplementController extends Controller
         ]);
     }
 
-    public function show(int $id)
+    public function show(Supplement $supplement)
     {
         return view('supplements.show', [
-            'supplement' => Supplement::find($id)
+            'supplement' => $supplement
         ]);
     }
 
@@ -45,17 +45,14 @@ class SupplementController extends Controller
         return redirect()->route('supplements.index');
     }
 
-    public function edit(int $id)
+    public function edit(Supplement $supplement)
     {
-        // Find supplement
-        $supplement = Supplement::findOrFail($id);
-
         return view('supplements.edit', [
             'supplement' => $supplement
         ]);
     }
 
-    public function update(UpdateSupplementRequest $request, int $id): RedirectResponse
+    public function update(UpdateSupplementRequest $request, Supplement $supplement): RedirectResponse
     {
         // Validate Data
         $validatedData = $request->validated();
@@ -63,16 +60,14 @@ class SupplementController extends Controller
         // Capitalize first character
         $validatedData['name'] = Str::ucfirst($validatedData['name']);
 
-        $supplement = Supplement::find($id);
-
         $supplement->update($validatedData);
 
         return redirect()->route('supplements.index');
     }
 
-    public function destroy(int $id)
+    public function destroy(Supplement $supplement)
     {
-        Supplement::findOrFail($id)->delete();
+        $supplement->delete();
 
         return redirect()->route('supplements.index');
     }

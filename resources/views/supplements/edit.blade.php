@@ -1,6 +1,6 @@
 <x-layout metaTitle="Edit Supplement" title="Edit Supplement: {{ $supplement->name }}">
     <section class="w-[480px]">
-        <form action="{{ route('supplement->update', ['id' => $supplement->id]) }}" method="POST" class="border border-black flex flex-col gap-4 p-4 rounded">
+        <form action="{{ route('supplement->update', $supplement) }}" method="POST" class="border border-black flex flex-col gap-4 p-4 rounded">
             @csrf
             @method("PATCH")
 
@@ -28,7 +28,7 @@
             </div>
         </form>
 
-        <form id="delete-form" method="POST" action="{{ route('supplement.destroy', ['id' => $supplement->id]) }}" class="hidden">
+        <form id="delete-form" method="POST" action="{{ route('supplement.destroy', $supplement) }}" class="hidden">
             @csrf
             @method('DELETE')
         </form>
