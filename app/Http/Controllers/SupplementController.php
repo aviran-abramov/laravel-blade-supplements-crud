@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Supplement\StoreSupplementRequest;
+use App\Http\Requests\Supplement\UpdateSupplementRequest;
 use App\Models\Supplement;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,13 +23,10 @@ class SupplementController extends Controller
         return view('supplements.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreSupplementRequest $request): RedirectResponse
     {
         // Validate Data
-        $validatedData = $request->validate([
-            'name' => 'required|string|min:3',
-            'description' => 'required|string'
-        ]);
+        $validatedData = $request->validated();
 
         // Capitalize first character
         $validatedData['name'] = Str::ucfirst($validatedData['name']);
@@ -49,13 +48,10 @@ class SupplementController extends Controller
         ]);
     }
 
-    public function update(Request $request, int $id): RedirectResponse
+    public function update(UpdateSupplementRequest $request, int $id): RedirectResponse
     {
         // Validate Data
-        $validatedData = $request->validate([
-            'name' => 'required|string|min:3',
-            'description' => 'required|string'
-        ]);
+        $validatedData = $request->validated();
 
         // Capitalize first character
         $validatedData['name'] = Str::ucfirst($validatedData['name']);
