@@ -12,7 +12,7 @@ Route::prefix('supplements')->group(function () {
     Route::post('/', [SupplementController::class, 'store'])->name('supplements.store');
 
     Route::get('/{supplement}/edit', [SupplementController::class, 'edit'])->name('supplements.edit');
-    Route::patch('/{supplement}', [SupplementController::class, 'update'])->name('supplement->update');
+    Route::patch('/{supplement}', [SupplementController::class, 'update'])->name('supplement.update');
 
     Route::delete("/{supplement}", [SupplementController::class, 'destroy'])->name('supplement.destroy');
 });
