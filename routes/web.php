@@ -3,18 +3,20 @@
 use App\Http\Controllers\SupplementController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('supplements')->group(function () {
-    Route::get('/', [SupplementController::class, 'index'])->name('supplements.index');
+Route::controller(SupplementController::class)
+    ->prefix('supplements')
+    ->group(function () {
+        Route::get('/', 'index')->name('supplements.index');
 
-    Route::get('/create', [SupplementController::class, 'create'])->name('supplements.create');
-    Route::post('/', [SupplementController::class, 'store'])->name('supplements.store');
+        Route::get('/create', 'create')->name('supplements.create');
+        Route::post('/', 'store')->name('supplements.store');
 
-    Route::get('/{supplement}', [SupplementController::class, 'show'])->name('supplements.show');
+        Route::get('/{supplement}', 'show')->name('supplements.show');
 
-    Route::get('/{supplement}/edit', [SupplementController::class, 'edit'])->name('supplements.edit');
-    Route::patch('/{supplement}', [SupplementController::class, 'update'])->name('supplements.update');
+        Route::get('/{supplement}/edit', 'edit')->name('supplements.edit');
+        Route::patch('/{supplement}', 'update')->name('supplements.update');
 
-    Route::delete("/{supplement}", [SupplementController::class, 'destroy'])->name('supplements.destroy');
-});
+        Route::delete("/{supplement}", 'destroy')->name('supplements.destroy');
+    });
 
 
