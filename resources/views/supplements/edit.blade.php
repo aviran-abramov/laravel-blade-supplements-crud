@@ -1,6 +1,6 @@
 <x-layout metaTitle="Edit Supplement" title="Edit Supplement: {{ $supplement->name }}">
     <section class="w-[480px]">
-        <form action="{{ route('supplement->update', $supplement) }}" method="POST" class="border border-black flex flex-col gap-4 p-4 rounded">
+        <form action="{{ route('supplements.update', $supplement) }}" method="POST" class="border border-black flex flex-col gap-4 p-4 rounded">
             @csrf
             @method("PATCH")
 
