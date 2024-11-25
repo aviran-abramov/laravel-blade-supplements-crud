@@ -11,6 +11,8 @@
 
                     {{-- Buttons/Actions --}}
                     <div class="flex items-center gap-2 mt-2">
+                        <a class="text-center border border-black bg-blue-400 hover:text-white p-2 rounded" href="{{ route('supplements.show', ['id' => $supplement->id]) }}">Show</a>
+
                         <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', ['id' => $supplement->id]) }}">Edit</a>
 
                         <form action="{{ route('supplement.destroy', ['id' => $supplement->id]) }}" method="POST">

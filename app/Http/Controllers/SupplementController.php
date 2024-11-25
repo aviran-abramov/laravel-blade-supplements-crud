@@ -18,6 +18,13 @@ class SupplementController extends Controller
         ]);
     }
 
+    public function show(int $id)
+    {
+        return view('supplements.show', [
+            'supplement' => Supplement::find($id)
+        ]);
+    }
+
     public function create()
     {
         return view('supplements.create');

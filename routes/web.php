@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('supplements')->group(function () {
     Route::get('/', [SupplementController::class, 'index'])->name('supplements.index');
 
+    Route::get('/{id}', [SupplementController::class, 'show'])->name('supplements.show');
+
     Route::get('/create', [SupplementController::class, 'create'])->name('supplements.create');
     Route::post('/', [SupplementController::class, 'store'])->name('supplements.store');
 
