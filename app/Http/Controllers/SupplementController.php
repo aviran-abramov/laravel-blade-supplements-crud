@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Supplement;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -20,7 +21,7 @@ class SupplementController extends Controller
         return view('supplements.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         // Validate Data
         $validatedData = $request->validate([
@@ -48,7 +49,7 @@ class SupplementController extends Controller
         ]);
     }
 
-    public function update(Request $request, int $id)
+    public function update(Request $request, int $id): RedirectResponse
     {
         // Validate Data
         $validatedData = $request->validate([
