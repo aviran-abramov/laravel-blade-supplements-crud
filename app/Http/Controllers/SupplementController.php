@@ -14,7 +14,7 @@ class SupplementController extends Controller
     public function index()
     {
         return view('supplements.index', [
-            "supplements" => Supplement::all()
+            "supplements" => Supplement::orderBy('name')->get()
         ]);
     }
 
