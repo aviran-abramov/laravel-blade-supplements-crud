@@ -32,16 +32,8 @@ class SupplementController extends Controller
 
     public function store(StoreSupplementRequest $request): RedirectResponse
     {
-        // Validate Data
-        $validatedData = $request->validated();
+        Supplement::create($request->validated());
 
-        // Capitalize first character
-        $validatedData['name'] = Str::ucfirst($validatedData['name']);
-
-        // Store
-        Supplement::create($validatedData);
-
-        // Redirect to index
         return redirect()->route('supplements.index');
     }
 
@@ -54,13 +46,7 @@ class SupplementController extends Controller
 
     public function update(UpdateSupplementRequest $request, Supplement $supplement): RedirectResponse
     {
-        // Validate Data
-        $validatedData = $request->validated();
-
-        // Capitalize first character
-        $validatedData['name'] = Str::ucfirst($validatedData['name']);
-
-        $supplement->update($validatedData);
+        $supplement->update($request->validated());
 
         return redirect()->route('supplements.index');
     }
