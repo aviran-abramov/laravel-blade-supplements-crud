@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <button class="border border-black bg-gray-300 hover:text-white p-2 rounded" type="submit">Create</button>
+                <button class="border border-black bg-green-500 hover:text-white p-2 rounded" type="submit">Create</button>
             </div>
         </form>
     </section>
