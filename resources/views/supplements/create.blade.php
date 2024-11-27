@@ -14,7 +14,7 @@
             <div class="flex flex-col gap-1">
                 <x-forms.label for="description">Description</x-forms.label>
 
-                <textarea class="border border-black rounded p-2" name="description" id="" cols="30" rows=2" placeholder="Herb that promotes relaxation, helps with mental clarity, reduces stress and cortisol levels."">{{ old('name') ?? '' }}</textarea>
+                <textarea class="border border-black rounded p-2" name="description" id="" cols="30" rows=2" placeholder="Herb that promotes relaxation, helps with mental clarity, reduces stress and cortisol levels."">{{ old('description') ?? '' }}</textarea>
 
                 <x-forms.error name="description" />
             </div>
