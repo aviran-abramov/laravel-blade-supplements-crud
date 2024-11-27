@@ -13,4 +13,6 @@ Route::resource('supplements', SupplementController::class)->names([
     'delete' => 'supplements.delete',
 ]);
 
+Route::redirect('/', '/supplements');
+
 
