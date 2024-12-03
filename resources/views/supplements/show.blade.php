@@ -9,13 +9,13 @@
 
             {{-- Buttons --}}
             <div class="flex items-center gap-2">
-                <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', $supplement) }}">Edit</a>
+                <x-forms.link-button color="bg-purple-400" href="{{ route('supplements.edit', $supplement) }}">Edit</x-forms.link-button>
 
                 <form id="delete-form" method="POST" action="{{ route('supplements.destroy', $supplement) }}">
                     @csrf
                     @method('DELETE')
 
-                    <button form="delete-form" class="border border-black bg-red-400 hover:text-white p-2 rounded" type="submit">Delete</button>
+                    <x-forms.submit-button form="delete-form" color="bg-red-400">Delete</x-forms.submit-button>
                 </form>
             </div>
         </div>

@@ -11,9 +11,9 @@
 
                     {{-- Buttons/Actions --}}
                     <div class="flex items-center gap-2 mt-2">
-                        <a class="text-center border border-black bg-blue-400 hover:text-white p-2 rounded" href="{{ route('supplements.show', $supplement) }}">Show</a>
+                        <x-forms.link-button color="bg-blue-400" href="{{ route('supplements.show', $supplement) }}">Show</x-forms.link-button>
 
-                        <a class="text-center border border-black bg-purple-400 hover:text-white p-2 rounded" href="{{ route('supplements.edit', $supplement) }}">Edit</a>
+                        <x-forms.link-button color="bg-purple-400" href="{{ route('supplements.edit', $supplement) }}">Edit</x-forms.link-button>
 
                         <form action="{{ route('supplements.destroy', $supplement) }}" method="POST">
                             @csrf
