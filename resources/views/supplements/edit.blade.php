@@ -24,7 +24,7 @@
             <div class="flex items-center gap-2">
                 <x-forms.submit-button color="bg-orange-400">Update</x-forms.submit-button>
 
-                <x-forms.submit-button color="bg-red-400">Delete</x-forms.submit-button>
+                <x-forms.submit-button form="delete-form" color="bg-red-400">Delete</x-forms.submit-button>
             </div>
         </form>
 
