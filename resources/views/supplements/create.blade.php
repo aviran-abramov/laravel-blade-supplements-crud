@@ -20,7 +20,7 @@
             </x-forms.form-field>
 
             <div>
-                <button class="border border-black bg-green-500 hover:text-white p-2 rounded" type="submit">Create</button>
+                <x-forms.submit-button color="bg-green-500">Create</x-forms.submit-button>
             </div>
         </form>
     </section>

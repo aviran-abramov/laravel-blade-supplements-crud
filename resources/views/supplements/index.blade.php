@@ -19,7 +19,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="text-center border border-black bg-red-400 hover:text-white p-2 rounded">Delete</button>
+                            <x-forms.submit-button color="bg-red-400">Delete</x-forms.submit-button>
                         </form>
                     </div>
                 </div>
