@@ -1,0 +1,1 @@
+<textarea {{ $attributes->merge(["class" => "border border-black rounded p-2"]) }} placeholder="Herb that promotes relaxation, helps with mental clarity, reduces stress and cortisol levels.">{{ $slot }}</textarea>

@@ -7,7 +7,7 @@
             <div class="flex flex-col gap-1">
                 <x-forms.label for="name">Supplement</x-forms.label>
 
-                <input class="border border-black rounded px-2 py-1" type="text" id="name" name="name" placeholder="Ashwagandha" value="{{ old("name") ?? $supplement->name }}">
+                <x-forms.input type="text" id="name" name="name" value="{{ old('name') ?? $supplement->name }}" />
 
                 <x-forms.error name="name" />
             </div>
@@ -15,7 +15,7 @@
             <div class="flex flex-col gap-1">
                 <x-forms.label for="description">Description</x-forms.label>
 
-                <textarea class="border border-black rounded p-2" name="description" id="" cols="30" rows=2" placeholder="Herb that promotes relaxation, helps with mental clarity, reduces stress and cortisol levels."">{{ old('description') ?? $supplement->description }}</textarea>
+                <x-forms.textarea name="description" id="description" cols="30" rows="2">{{ old('description') ?? $supplement->description }}</x-forms.textarea>
 
                 <x-forms.error name="description" />
             </div>
