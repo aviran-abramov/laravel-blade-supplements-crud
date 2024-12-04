@@ -7,7 +7,7 @@
             <x-forms.form-field>
                 <x-forms.label for="name">Supplement</x-forms.label>
 
-                <x-forms.input type="text" id="name" name="name" value="{{ old('name') ?? $supplement->name }}" />
+                <x-forms.input type="text" id="name" name="name" placeholder="Ashwagandha" required value="{{ old('name') ?? $supplement->name }}" />
 
                 <x-forms.error name="name" />
             </x-forms.form-field>
@@ -15,7 +15,7 @@
             <x-forms.form-field>
                 <x-forms.label for="description">Description</x-forms.label>
 
-                <x-forms.textarea name="description" id="description" cols="30" rows="2">{{ old('description') ?? $supplement->description }}</x-forms.textarea>
+                <x-forms.textarea name="description" id="description" cols="30" rows="2" required>{{ old('description') ?? $supplement->description }}</x-forms.textarea>
 
                 <x-forms.error name="description" />
             </x-forms.form-field>

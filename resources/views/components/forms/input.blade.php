@@ -1,1 +1,1 @@
-<input placeholder="Ashwagandha" {{ $attributes->merge(["class" => "border border-black rounded px-2 py-1"]) }}>
+<input {{ $attributes->merge(["class" => "border border-black rounded px-2 py-1"]) }}>
