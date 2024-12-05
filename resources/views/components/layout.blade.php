@@ -36,7 +36,7 @@
                             @endguest
 
                             @auth
-
+                                <x-nav-link href="{{ route('session.create') }}" :active="request()->routeIs('session.create')">Logout</x-nav-link>
                             @endauth
                         </div>
                     </div>
