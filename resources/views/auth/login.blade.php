@@ -24,7 +24,7 @@
             <div>
                 <x-forms.submit-button color="bg-green-500">Login</x-forms.submit-button>
 
-                <x-forms.link-button color="bg-gray-300" href="{{ route('supplements.index') }}">Cancel</x-forms.link-button>
+                <x-forms.link-button color="bg-gray-400" href="{{ route('supplements.index') }}">Cancel</x-forms.link-button>
             </div>
         </form>
     </section>

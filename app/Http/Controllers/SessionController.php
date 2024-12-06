@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
@@ -13,8 +14,20 @@ class SessionController extends Controller
         return view('auth.login');
     }
 
-    public function store(LoginRequest $loginRequest): RedirectResponse
+    public function store(LoginRequest $request): RedirectResponse
     {
-        return redirect()->route('supplements.index');
+        if (!Auth::attempt($request->validated())) {
+            return back()->withErrors(['email' => "One of the fields is incorrect. Please try again."]);
+        }
+
+        $request->session()->regenerate();
+        return to_route('supplements.index');
+    }
+
+    public function destroy()
+    {
+        Auth::logout();
+
+        return to_route('supplements.index');
     }
 }

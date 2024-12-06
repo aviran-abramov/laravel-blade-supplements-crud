@@ -36,7 +36,13 @@
                             @endguest
 
                             @auth
-                                <x-nav-link href="{{ route('session.create') }}" :active="request()->routeIs('session.create')">Logout</x-nav-link>
+                                {{-- <x-nav-link href="{{ route('session.create') }}" :active="request()->routeIs('session.create')">Logout</x-nav-link> --}}
+
+                                <form action="{{ route('session.destroy') }}" method="POST">
+                                    @csrf
+
+                                    <x-forms.submit-button color="bg-purple-400">Log Out</x-forms.submit-button>
+                                </form>
                             @endauth
                         </div>
                     </div>
