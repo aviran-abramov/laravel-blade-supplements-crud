@@ -7,7 +7,7 @@
             <x-forms.form-field>
                 <x-forms.label for="email">Email Address</x-forms.label>
 
-                <x-forms.input type="email" id="email" name="email" required placeholder="johndoe@gmail.com" value="{{ old('email') ?? '' }}" />
+                <x-forms.input type="email" id="email" name="email" required placeholder="johndoe@gmail.com" value="{{ old('email') }}" />
 
                 <x-forms.error name="email" />
             </x-forms.form-field>
@@ -16,7 +16,7 @@
             <x-forms.form-field>
                 <x-forms.label for="password">Password</x-forms.label>
 
-                <x-forms.input type="password" id="password" name="password" placeholder="123456" required value="{{ old('password') ?? '' }}" />
+                <x-forms.input type="password" id="password" name="password" placeholder="123456" required />
 
                 <x-forms.error name="password" />
             </x-forms.form-field>

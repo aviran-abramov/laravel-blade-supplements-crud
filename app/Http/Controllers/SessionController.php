@@ -17,10 +17,11 @@ class SessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         if (!Auth::attempt($request->validated())) {
-            return back()->withErrors(['email' => "One of the fields is incorrect. Please try again."]);
+            return back()->withInput($request->only('email'))->withErrors(['email' => "One of the fields is incorrect. Please try again."]);
         }
 
         $request->session()->regenerate();
+
         return to_route('supplements.index');
     }
 

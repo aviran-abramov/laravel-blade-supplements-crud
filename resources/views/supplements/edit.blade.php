@@ -7,7 +7,7 @@
             <x-forms.form-field>
                 <x-forms.label for="name">Supplement</x-forms.label>
 
-                <x-forms.input type="text" id="name" name="name" placeholder="Ashwagandha" required value="{{ old('name') ?? $supplement->name }}" />
+                <x-forms.input type="text" id="name" name="name" placeholder="Ashwagandha" required :value="old('name') ?? $supplement->name" />
 
                 <x-forms.error name="name" />
             </x-forms.form-field>

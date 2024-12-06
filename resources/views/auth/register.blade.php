@@ -7,7 +7,7 @@
             <x-forms.form-field>
                 <x-forms.label for="email">Email Address</x-forms.label>
 
-                <x-forms.input type="email" id="email" name="email" required placeholder="johndoe@gmail.com" value="{{ old('email') ?? '' }}" />
+                <x-forms.input type="email" id="email" name="email" required placeholder="johndoe@gmail.com" :value="old('email')" />
 
                 <x-forms.error name="email" />
             </x-forms.form-field>
@@ -16,7 +16,7 @@
             <x-forms.form-field>
                 <x-forms.label for="first_name">First Name</x-forms.label>
 
-                <x-forms.input type="text" id="first_name" name="first_name" placeholder="John" required value="{{ old('first_name') ?? '' }}" />
+                <x-forms.input type="text" id="first_name" name="first_name" placeholder="John" required :value="old('first_name')" />
 
                 <x-forms.error name="first_name" />
             </x-forms.form-field>
@@ -25,7 +25,7 @@
             <x-forms.form-field>
                 <x-forms.label for="last_name">Last Name</x-forms.label>
 
-                <x-forms.input type="text" id="last_name" name="last_name" placeholder="Doe" required value="{{ old('last_name') ?? '' }}" />
+                <x-forms.input type="text" id="last_name" name="last_name" placeholder="Doe" required :value="old('last_name')" />
 
                 <x-forms.error name="last_name" />
             </x-forms.form-field>
@@ -34,7 +34,7 @@
             <x-forms.form-field>
                 <x-forms.label for="password">Password</x-forms.label>
 
-                <x-forms.input type="password" id="password" name="password" placeholder="123456" required value="{{ old('password') ?? '' }}" />
+                <x-forms.input type="password" id="password" name="password" placeholder="123456" required />
 
                 <x-forms.error name="password" />
             </x-forms.form-field>
@@ -43,7 +43,7 @@
             <x-forms.form-field>
                 <x-forms.label for="password_confirmation">Confirm Password</x-forms.label>
 
-                <x-forms.input type="password" id="password_confirmation" name="password_confirmation" required placeholder="123456" value="{{ old('password_confirmation') ?? '' }}" />
+                <x-forms.input type="password" id="password_confirmation" name="password_confirmation" required placeholder="123456" />
 
                 <x-forms.error name="password_confirmation" />
             </x-forms.form-field>
